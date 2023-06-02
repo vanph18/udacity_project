@@ -126,10 +126,10 @@ jobs:
           name: Analyse frontend
           command: |
             cd frontend
-            npm install
-            npm audit fix --audit-level-critical --force
-            npm audit fix --audit-level-critical --force
-            npm audit --audit-level-critical
+            npm audit fix --audit-level=critical --force
+            # If the "npm audit fix" command above could not fix all critical vulnerabilities, try “npm audit fix --force” again
+            npm audit fix --force
+            npm audit --audit-level=critical
 
   scan-backend:
     docker:
@@ -142,10 +142,10 @@ jobs:
           name: Analyse backend
           command: |
             cd backend
-            npm install
-            npm audit fix --audit-level-critical --force
-            npm audit fix --audit-level-critical --force
-            npm audit --audit-level-critical
+            npm audit fix --audit-level=critical --force
+            # If the "npm audit fix" command above could not fix all critical vulnerabilities, try “npm audit fix --force” again
+            npm audit fix --force
+            npm audit --audit-level=critical
 
   # deploy-infrastructure:
   #   docker:
