@@ -126,6 +126,7 @@ jobs:
           name: Analyse frontend
           command: |
             cd frontend
+            npm install
             npm audit fix --audit-level=critical --force
             # If the "npm audit fix" command above could not fix all critical vulnerabilities, try “npm audit fix --force” again
             npm audit fix --force
@@ -142,6 +143,7 @@ jobs:
           name: Analyse backend
           command: |
             cd backend
+            npm install
             npm audit fix --audit-level=critical --force
             # If the "npm audit fix" command above could not fix all critical vulnerabilities, try “npm audit fix --force” again
             npm audit fix --force
