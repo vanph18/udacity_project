@@ -1,6 +1,10 @@
 Description: >
   Cloudfront distribution for UdaPeople.
-
+  ws cloudformation deploy \
+         --template-file cloudfront.yml \
+         --stack-name InitialStack\
+         --parameter-overrides WorkflowID=udapeople-vanph5
+         
 Parameters:
   WorkflowID:
     Description: Unique identifier.
